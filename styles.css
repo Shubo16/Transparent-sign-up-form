@@ -1,0 +1,139 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+    --primary-light-hsl: 200, 100%, 91%;
+    --primary-hsl: 200, 100%, 50%;
+    --primary-dark-hsl: 200, 100%, 6%;
+    --success-hsl: 100, 60%, 50%;
+    --error-hsl: 0, 60%, 50%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.full-screen-container {
+    background-image: url(/images/e45a2c3a8e76936a2d668d6d2e6bf17e.jpg);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container {
+    --color: hsl(var(--primary-dark-hsl), .7);
+    background-color:var(--color);
+    box-shadow: 0 0 15px 0 var(--color);
+    padding: 40px 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20px;
+
+
+}
+
+.login_title {
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1.25rem;
+    margin-top: 40px;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;    
+}
+
+.input_group label {
+    color: white;
+    font-weight: lighter;
+}
+
+.input_group input {
+    font-size: 1.25rem;
+    padding: .5em;
+    background-color: hsl(var(--primary-light-hsl), .3);
+    border: none;
+    outline: none;
+    border-radius: .25em;
+    color: white;
+    font-weight: lighter;
+}
+
+/* WHEN CLICKING ON INPUT, BORDER WILL BE HIGHLIGHTED AROUND */
+
+.input_group input:focus {
+    box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+}
+
+
+.input_group.success input {
+  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+
+.input_group.error input {
+  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+
+.input_group input:focus {
+  box-shadow: 0 0 0 1px hsl(var(--primary-hsl));
+}
+
+.input_group .msg {
+  display: none;
+  font-size: .75rem;
+}
+
+.input_group.success .msg,
+.input_group.error .msg {
+  display: block;
+}
+
+.input_group.error .msg {
+  color: hsl(var(--error-hsl));
+}
+
+.input_group.success .msg {
+  color: hsl(var(--success-hsl));
+}
+
+.login__button {
+    padding: .5em 1em;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: white;
+    background-color: hsl(var(--primary-hsl), .25);
+    border: 1px solid hsl(var(--primary-hsl));
+    border-radius: .25em;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.login__button:hover,
+.login__button:focus {
+    background-color: rgba(255, 115, 229, 0.5);
+    transition: ease-in 0.5s;
+    animation: slide 2s ease-in-out .5s infinite alternate;}
